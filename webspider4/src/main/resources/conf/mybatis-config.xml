@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 配置分页拦截器 -->
+	<!-- <plugins>
+		<plugin interceptor="im.lantian.dao.mybatis.pagination.PaginationInterceptor">
+			如果同时需要一种以上数据库，就只能修改这个插件获取方言的方式和分页时的具体实现
+			<property name="dialect" value="oracle" />
+			哪些方法发起的sql需要被替换
+			<property name="queryMethod_matches" value=".*list.*" />
+		</plugin>
+	</plugins> -->
+
+</configuration>     

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- org.mybatis.generator:mybatis-generator-maven-plugin:1.3.1:generate -->
+<!-- 启动命令 mvn mybatis-generator:generate -->
+<generatorConfiguration>
+
+	<!-- 设置数据库驱动文件 -->
+	<classPathEntry
+		location="E:\developDocument\JavaWeb\apache\maven\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" />
+
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+
+		<!-- 避免生成注解 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<!-- 数据库连接信息 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/bigdata?useUnicode=true&amp;characterEncoding=utf8"
+			userId="root" password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- Model文件保存位置 -->
+		<javaModelGenerator targetPackage="com.spider4j.spider.webspider.model"
+			targetProject="src/main/java">
+			<!-- 开启子包 -->
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- 生成的mapper文件 -->
+		<sqlMapGenerator targetPackage="com.spider4j.spider.webspider.dao"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 生成的查询条件的类 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.spider4j.spider.webspider.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- <table tableName="spider4j_article" domainObjectName="Article" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false" /> -->
+		<!-- <table tableName="spider4j_url_index" domainObjectName="UrlIndex" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false" /> -->
+		<!-- <table tableName="spider4j_url" domainObjectName="UrlInd" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false" /> -->
+		<table tableName="stock_ind" domainObjectName="Stock_ind"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+	</context>
+</generatorConfiguration>
